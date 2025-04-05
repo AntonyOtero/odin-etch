@@ -34,6 +34,8 @@ const generateGrid = (gridSize) => {
         unit.addEventListener("mouseover", e => {
             if (!e.target.style.backgroundColor) {
                 updateUnitColor(e.target, getRandomColor())
+            } else {
+                updateUnitOpacity(e.target, 0.1);
             }
         });
     });
@@ -47,11 +49,24 @@ const updateUnitColor = (unit, color="rgb(33,33,33)") => {
     unit.style.backgroundColor = color;
 }
 
+const updateUnitOpacity = (unit, value) => {
+    let unitColor = unit.style.backgroundColor;
+    let unitColorArr = unitColor.substring(5, unitColor.length - 1).split(", ");
+    let unitColorAlpha = Number.parseFloat(unitColorArr[3]);
+    let newColorAlpha;
+
+    if (unitColorAlpha + value <= 1) {
+        newColorAlpha = unitColorAlpha + value;
+        unitColorArr[3] = newColorAlpha;
+        unit.style.backgroundColor = "rgba(" + unitColorArr.join(", ") + ")";
+    }
+}
+
 const getRandomColor = () => {
     const red = getRandomInteger(0, 256);
     const green = getRandomInteger(0, 256);
     const blue = getRandomInteger(0, 256);
-    return `rgb(${red},${green},${blue})`;
+    return `rgba(${red},${green},${blue}, 0.1)`;
 }
 
 const getRandomInteger = (min, max) => {
