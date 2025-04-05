@@ -13,6 +13,7 @@ const generateGrid = (gridSize) => {
 
     let newGridContainer = document.createElement("div");
     newGridContainer.classList.add("grid-container");
+    newGridContainer.style.width = `calc(20px * ${gridSize})`;
     document.body.appendChild(newGridContainer);
 
     for (i = 0; i < gridSize; i++) {
