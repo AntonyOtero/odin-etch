@@ -51,7 +51,7 @@ const getRandomColor = () => {
     const red = getRandomInteger(0, 256);
     const green = getRandomInteger(0, 256);
     const blue = getRandomInteger(0, 256);
-    return `rgba(${red},${green},${blue},0.10)`;
+    return `rgb(${red},${green},${blue})`;
 }
 
 const getRandomInteger = (min, max) => {
