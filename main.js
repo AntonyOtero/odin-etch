@@ -23,7 +23,7 @@ const generateGrid = (gridSize) => {
     for (i = 0; i < gridSize; i++) {
         for (j = 0; j < gridSize; j++) {
             let newGridUnit = document.createElement("div");
-            newGridUnit.classList.add("grid-unit", "debug");
+            newGridUnit.classList.add("grid-unit");
             newGridContainer.appendChild(newGridUnit);
         }
     }
