@@ -6,10 +6,30 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    margin: 0;
+}
+
+.btn {
+    position: fixed;
+    bottom: 40px;
+    padding: 20px 60px;
+    background-color: #212121;
+    color: #f1f1f1;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #212121;
+    border: 2px #212121 solid;
 }
 
 .grid-container {
