@@ -31,7 +31,11 @@ const generateGrid = (gridSize) => {
     const GRID_UNITS = [...document.querySelectorAll(".grid-unit")];
 
     GRID_UNITS.forEach(unit => {
-        unit.addEventListener("mouseover", e => updateUnitColor(e.target, getRandomColor()));
+        unit.addEventListener("mouseover", e => {
+            if (!e.target.style.backgroundColor) {
+                updateUnitColor(e.target, getRandomColor())
+            }
+        });
     });
 }
 
