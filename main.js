@@ -1,5 +1,9 @@
 const getGridSize = () => {
-    const gridSize = prompt("Enter a grid size (0-100): ");
+    let gridSize = 0;
+
+    while (gridSize < 2 || gridSize > 30) {
+        gridSize = prompt("Enter a grid size (2-30): ");
+    }
 
     return gridSize;
 }
